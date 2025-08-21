@@ -45,3 +45,35 @@ This project involved completing **TryHackMe's SOC Level 1** simulator, a hands-
   | where count > 10
   | sort - count
 
+- **Findings:** Identified brute force attempt from suspicious IP
+
+- **MITRE Technique:** T1110 - Brute Force
+
+**Malware Execution Analysis**
+- **Alert:** Suspicious process execution
+
+- **Analysis:**
+
+  - Examined process tree relationships
+
+  - Submitted file hashes to VirusTotal
+
+  - Analyzed network connections
+
+- **Findings:** Identified malware persistence mechanism
+
+- **MITRE Technique:** T1204 - User Execution
+
+## 📊 Key Results & Metrics
+- **Incidents Handled:** 10+ security alerts
+
+- **Detection Accuracy:** 90% correct classification rate
+
+- **IOCs Extracted:** 15+ indicators (IPs, hashes, domains)
+
+- **Techniques Mapped:** 8+ MITRE ATT&CK techniques
+
+## 🎯 Lessons Learned
+"This simulation reinforced that effective documentation is as crucial as detection - clear notes enable smoother handoffs to Tier 2 analysts and better incident resolution."
+
+"I gained practical understanding of how apparent false positives often reveal deeper security issues when investigated thoroughly."
