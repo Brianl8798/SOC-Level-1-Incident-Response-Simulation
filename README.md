@@ -19,13 +19,6 @@ Tools Used: Email headers, URLScan, Splunk, Windows Logs, VirusTotal, ProcMon
 
 Skills Demonstrated: Indentifying malicious links/attachments, KQL-style querying for failed logins, Process tree analysis & IOC extraction
 
-📊 Sample Splunk Query
-
-sql
-index=windows EventCode=4625 
-| stats count by src_ip, user 
-| where count > 5 
-| rename src_ip AS "Attacker IP", user AS "Target Account" 
 
 🎯 Outcomes
 
