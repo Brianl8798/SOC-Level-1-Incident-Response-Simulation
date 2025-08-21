@@ -1,38 +1,47 @@
-🔍 SOC Level 1 Incident Response Simulation
-Hands-on threat analysis using TryHackMe’s SOC simulator
+# 🔍 SOC Level 1 Incident Response Simulation
 
-🚀 Overview
+*Hands-on analysis of security alerts in a simulated SOC environment using TryHackMe's SOC Level 1 path.*
 
-Completed TryHackMe’s SOC Level 1 simulation to:
+![TryHackMe](https://img.shields.io/badge/TryHackMe-SOC_Level_1-FF6D70?style=for-the-badge&logo=tryhackme&logoColor=white)
+![Splunk](https://img.shields.io/badge/Splunk-Querying-000000?style=for-the-badge&logo=splunk&logoColor=white)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT&CK-FF6D70?style=for-the-badge&logo=mitre&logoColor=white)
 
-✔ Triage real-world security alerts (phishing, brute force, malware)
+## 📋 Project Overview
 
-✔ Investigate incidents using Splunk and Windows Event Logs
+This project involved completing **TryHackMe's SOC Level 1** simulator, a hands-on environment designed to mimic real-world Security Operations Center workflows. I analyzed various security alerts, investigated incidents, and documented findings following standard IR procedures.
 
-✔ Document findings and recommend mitigations
+**Key Skills Practiced:**
+- Security alert triage and analysis
+- Splunk querying for log investigation
+- IOC extraction and threat intelligence correlation
+- Incident documentation and reporting
+- MITRE ATT&CK framework application
 
-🛠️ Key Activities
+## 🛠️ Tools & Technologies Used
 
-Incident Type: Phishing Analysis, Brute Force Attack, Malware Execution
+- **SIEM Platform:** Splunk
+- **Threat Intelligence:** VirusTotal, URLScan.io
+- **Analysis Tools:** Windows Event Viewer, CMD, PowerShell
+- **Framework:** MITRE ATT&CK
+- **Platform:** TryHackMe
 
-Tools Used: Email headers, URLScan, Splunk, Windows Logs, VirusTotal, ProcMon
+## 🔬 Incident Analysis Examples
 
-Skills Demonstrated: Indentifying malicious links/attachments, KQL-style querying for failed logins, Process tree analysis & IOC extraction
+### Phishing Email Investigation
+- **Alert:** Suspicious email reported by user
+- **Analysis:** 
+  - Examined email headers for spoofing indicators
+  - Analyzed embedded URLs using URLScan.io
+  - Extracted and examined attachments
+- **Findings:** Identified malicious payload delivery attempt
+- **MITRE Technique:** T1566 - Phishing
 
-
-🎯 Outcomes
-
-Closed 8/10 incidents with accurate root cause analysis
-
-Extracted 15+ IOCs (IPs, hashes, domains) for threat intel
-
-Recommended mitigations:
-
-Block malicious IPs at firewall
-
-Implement MFA for exposed services
-
-💡 Lessons Learned
-
-"Documentation is as critical as detection – clear notes accelerated collaboration with L2 analysts."
+### Brute Force Attack Detection
+- **Alert:** Multiple failed login attempts
+- **Analysis:**
+  ```sql
+  index=windows EventCode=4625
+  | stats count by src_ip, user
+  | where count > 10
+  | sort - count
 
